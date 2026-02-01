@@ -1,0 +1,150 @@
+.section-title-wrapper {
+  position: relative;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+}
+
+.section-title {
+  display: inline-block;
+  position: relative;
+  padding: 0 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2937;
+  background: #f5f7fb; /* app background */
+  z-index: 3;
+}
+
+.section-title-wrapper .decor-left,
+.section-title-wrapper .decor-right {
+  position: absolute;
+  top: 50%;
+  width: 36px;              /* 🔑 control size here */
+  height: 36px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.section-title-wrapper .decor-left {
+  left: 35.5%;
+  background-image: url('/assets/decorations/vecteezy_fireworks_left.png');
+}
+
+.section-title-wrapper .decor-right {
+  right: 35.5%;
+  background-image: url('/assets/decorations/vecteezy_fireworks_right.png');
+}
+
+.category-scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 12px 16px; 
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.25) transparent;
+}
+
+.category-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome */
+  height: 6px; /* thin modern bar */
+}
+
+.category-scroll-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.category-scroll-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+/* Optional: hide scrollbar completely but keep scroll */
+.category-scroll-wrapper.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.category-scroll-wrapper.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.category-scroll {
+  display: flex;
+  gap: 1.5rem; /* space between cards */
+}
+
+.category-scroll {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* EXACTLY 3 cards on desktop */
+.category-item {
+  flex: 0 0 calc((100% - 3rem) / 3);
+}
+
+/* Tablet → 2 cards */
+@media (max-width: 992px) {
+  .category-item {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
+  }
+}
+
+/* Mobile → 1 card */
+// @media (max-width: 576px) {
+//   .category-item {
+//     flex: 0 0 85%;
+//   }
+
+//   .section-title-wrapper::before,
+//   .section-title-wrapper::after {
+//     width: 20%;
+//   }
+
+//   .section-title-wrapper .decor-left,
+//   .section-title-wrapper .decor-right {
+//     width: 22px;
+//     height: 22px;
+//   }
+
+  
+// }
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.4rem;
+    padding: 0 0.75rem;
+  }
+
+  .section-title-wrapper::before,
+  .section-title-wrapper::after {
+    width: 15%; /* shorter lines */
+  }
+
+  .decor-left,
+  .decor-right {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .category-scroll-wrapper {
+    padding: 8px; /* 🔑 fixed value */
+  }
+
+  .category-scroll {
+    gap: 0.75rem; /* 🔑 smaller gap on mobile */
+  }
+
+  .category-item {
+    flex: 0 0 calc((100% - 0.75rem - 16px) / 2);
+    /*
+      0.75rem = gap between 2 cards
+      16px = left + right padding (8px + 8px)
+    */
+  }
+}

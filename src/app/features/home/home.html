@@ -1,0 +1,29 @@
+<!-- 🔹 HERO / BANNER CAROUSEL -->
+<section class="mb-4">
+  <div class="mx-5">
+    <app-banner-carousel [banners]="banners"></app-banner-carousel>
+  </div>
+</section>
+
+
+<section class="m-5">
+  <div class="section-title-wrapper ">
+    <span class="decor-left"></span>
+    <h2 class="section-title px-0">Shop by Categories</h2>
+    <span class="decor-right"></span>
+  </div>
+
+  <div class="category-scroll-wrapper">
+    <div class="category-scroll">
+      <div
+        class="category-item"
+        *ngFor="let category of categories"
+      >
+        <app-category-card
+          [category]="category"
+        ></app-category-card>
+      </div>
+    </div>
+  </div>
+</section>
+

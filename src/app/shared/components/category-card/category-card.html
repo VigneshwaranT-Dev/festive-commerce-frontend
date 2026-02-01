@@ -1,0 +1,11 @@
+<div class="category-card" (click)="navigate()">
+  <div class="image-box">
+    <img [src]="category.image" [alt]="category.name" />
+  </div>
+
+  <h3>{{ category.name }}</h3>
+
+  <button class="view-btn">
+    View All →
+  </button>
+</div>
