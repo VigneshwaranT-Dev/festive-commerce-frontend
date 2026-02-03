@@ -3,22 +3,21 @@
 ====================================================== */
 
 .header-wrapper {
-  padding: 12px;
+  padding: 26px 14px;
   background-color: white;
 
-   position: sticky;
-    top: 0; 
-    z-index: 1000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-card {
   width: 100%;
-//   max-width: 1280px;
   margin: 0;
   background-color: #0c4a4a;
   border-radius: 10px;
 
-  padding: 22px 24px;   /* ⬅ increased vertical padding */
+  padding: 22px 24px; /* ⬅ increased vertical padding */
 
   display: flex;
   align-items: center;
@@ -27,7 +26,6 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* LEFT */
 .header-left {
   display: flex;
   align-items: center;
@@ -81,8 +79,8 @@
   height: 36px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background: #ffffff;
+  color: #0c4a4a;
   cursor: pointer;
 }
 
@@ -109,59 +107,140 @@
   padding-left: 40px; /* space for search icon */
 }
 
+.brand-logo {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+}
 
-/* ======================================================
-   TABLET STYLES
-====================================================== */
+.mobile-only {
+  display: none;
+}
+
+.cart-btn {
+  position: relative;
+}
+
+/* Badge */
+.cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+
+  width: 16px;
+  height: 16px;
+
+  background: #ef4444; /* red */
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 0 0 2px #0c4a4a; /* matches header bg */
+}
 
 @media (max-width: 991px) {
+  .header-card {
+    height: 56px;
+    padding: 0 14px;
+    align-items: center;
+  }
+
+  /* Left */
+  .header-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .menu-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+  }
+
+  /* Center */
+  .brand-logo {
+    height: 85px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Hide search on tablet + mobile */
+  .header-search {
+    display: none;
+  }
+
+  /* Right */
+  .header-right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .delivery-msg {
     display: none;
   }
 
-  .header-search {
-    margin: 0 16px;
+  /* Visibility control */
+  .mobile-only {
+    display: inline-flex;
+  }
+
+  .desktop-only {
+    display: none;
   }
 }
 
-
-/* ======================================================
-   MOBILE STYLES
-====================================================== */
-
-/* ======================================================
-   MOBILE STYLES
-====================================================== */
-
-@media (max-width: 576px) {
-  .header-wrapper {
-    padding: 8px;
-  }
-
+@media (max-width: 768px) {
   .header-card {
-    width: 100%;
-    max-width: 1280px;
-    box-sizing: border-box;
+    height: 56px; /* compact mobile height */
+    padding: 0 14px;
+    align-items: center;
   }
 
-    .header-search {
-        display: none;
-    }
-
-  /* 🔑 FIX SEARCH FOR MOBILE */
-  .header-search input {
-    padding: 10px 14px 10px 36px; /* balanced height */
-    font-size: 0.85rem;
-    border-radius: 14px;
+  /* Left */
+  .header-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 
-  .search-icon {
-    left: 12px;
-    font-size: 0.85rem;
+  .menu-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
   }
 
-  .brand {
-    font-size: 1.05rem;
+  /* Center */
+  .brand-logo {
+    height: 85px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* Right */
+  .header-right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Visibility control */
+  .mobile-only {
+    display: inline-flex;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .menu-btn i {
+    font-size: 24px;
   }
 }
-

@@ -1,35 +1,35 @@
 <header class="header-wrapper">
   <div class="header-card">
-    <!-- Left -->
     <div class="header-left">
-      <!-- <button class="menu-btn" aria-label="Menu">
+      <button class="menu-btn mobile-only" aria-label="Menu">
         <i class="bi bi-list"></i>
-      </button> -->
-
-      <span class="brand">Sree Vignesh Pyro Park</span>
+      </button>
+    </div>
+    <div class="header-left">
+      <img src="assets/logo/app-logo.png" alt="Sree Vignesh Pyro Park" class="brand-logo" />
     </div>
 
     <!-- Center -->
-    <div class="header-search">
+    <div class="header-search desktop-only">
       <i class="bi bi-search search-icon"></i>
-      <input
-        type="text"
-        placeholder="Search crackers, gift boxes, sky shots..."
-      />
+      <input type="text" placeholder="Search crackers, gift boxes, sky shots..." />
     </div>
 
-    <!-- Right -->
     <div class="header-right">
-      <span class="delivery-msg">
+      <span class="delivery-msg desktop-only">
         <i class="bi bi-lightning-fill text-warning"></i>
         Order now & get it fast
       </span>
 
-      <button class="icon-btn" aria-label="Cart">
-        <i class="bi bi-cart3"></i>
+      <button class="icon-btn cart-btn" aria-label="Cart">
+        <i class="bi bi-cart4"></i>
+
+        <span class="cart-badge">
+          {{ cartCount }}
+        </span>
       </button>
 
-      <button class="icon-btn" aria-label="Profile">
+      <button class="icon-btn desktop-only" aria-label="Profile">
         <i class="bi bi-person"></i>
       </button>
     </div>
