@@ -1,50 +1,32 @@
-<!-- <nav class="bottom-nav mobile-only">
-  <a routerLink="/shop" routerLinkActive="active" class="nav-item">
-    <div class="icon-circle">
-      <i class="bi bi-shop"></i>
-    </div>
-  </a>
+<div class="mobile-bottom-wrapper mobile-only">
+  <div class="bottom-nav">
+    <button class="nav-item" [class.active]="activeTab === 'home'" (click)="setActive('home')">
+      <div class="icon-circle">
+        <i class="bi bi-house"></i>
+      </div>
+    </button>
+    <!-- SHOP -->
+    <button class="nav-item" [class.active]="activeTab === 'shop'" (click)="setActive('shop')">
+      <div class="icon-circle">
+        <i class="bi bi-shop"></i>
+      </div>
+    </button>
 
-  <a routerLink="/cart" routerLinkActive="active" class="nav-item cart-item">
-    <div class="icon-circle cart-btn">
-      <i class="bi bi-cart4"></i>
+    <!-- CART -->
+    <button class="nav-item cart-item" [class.active]="activeTab === 'cart'" (click)="setActive('cart')">
+      <div class="icon-circle cart-btn">
+        <i class="bi bi-cart4"></i>
+        <span class="cart-badge" *ngIf="cartCount > 0">
+          {{ cartCount }}
+        </span>
+      </div>
+    </button>
 
-      <span class="cart-badge">
-        {{ cartCount }}
-      </span>
-    </div>
-  </a>
-
-  <a routerLink="/account" routerLinkActive="active" class="nav-item">
-    <div class="icon-circle">
-      <i class="bi bi-person"></i>
-    </div>
-  </a>
-</nav> -->
-
-<nav class="bottom-nav mobile-only">
-  <!-- SHOP -->
-  <button class="nav-item" [class.active]="activeTab === 'shop'" (click)="setActive('shop')">
-    <div class="icon-circle">
-      <i class="bi bi-shop"></i>
-    </div>
-  </button>
-
-  <!-- CART -->
-  <button class="nav-item cart-item" [class.active]="activeTab === 'cart'" (click)="setActive('cart')">
-    <div class="icon-circle cart-btn">
-      <i class="bi bi-cart4"></i>
-
-      <span class="cart-badge" *ngIf="cartCount > 0">
-        {{ cartCount }}
-      </span>
-    </div>
-  </button>
-
-  <!-- ACCOUNT -->
-  <button class="nav-item" [class.active]="activeTab === 'account'" (click)="setActive('account')">
-    <div class="icon-circle">
-      <i class="bi bi-person"></i>
-    </div>
-  </button>
-</nav>
+    <!-- ACCOUNT -->
+    <button class="nav-item" [class.active]="activeTab === 'account'" (click)="setActive('account')">
+      <div class="icon-circle">
+        <i class="bi bi-person"></i>
+      </div>
+    </button>
+  </div>
+</div>

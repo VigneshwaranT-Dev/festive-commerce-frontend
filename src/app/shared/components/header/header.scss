@@ -1,10 +1,6 @@
-/* ======================================================
-   DESKTOP STYLES (BASE)
-====================================================== */
-
 .header-wrapper {
-  padding: 26px 14px;
-  background-color: white;
+  padding: 14px 14px;
+  background-color: #f1f5eb;
 
   position: sticky;
   top: 0;
@@ -55,7 +51,7 @@
 .header-search input {
   width: 100%;
   padding: 10px 18px;
-  border-radius: 999px; /* pill */
+  border-radius: 7px; /* pill */
   border: none;
   outline: none;
   font-size: 0.9rem;
@@ -72,6 +68,8 @@
   font-size: 0.8rem;
   color: #d1fae5;
   white-space: nowrap;
+  letter-spacing: 1px;
+  padding-right: 14px;
 }
 
 .icon-btn {
@@ -96,19 +94,40 @@
 
 .search-icon {
   position: absolute;
-  left: 16px;
+  right: 5px;
   top: 50%;
   transform: translateY(-50%);
-  color: #6ee7b7;
-  font-size: 0.9rem;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+
+  background-color: #0c4a4a;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.85rem;
+  cursor: pointer;
 }
 
 .header-search input {
-  padding-left: 40px; /* space for search icon */
+  width: 100%;
+  padding: 10px 50px 10px 18px;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.header-search input:focus + .search-icon {
+  background-color: #0c4a4a; /* darker green */
 }
 
 .brand-logo {
-  height: 120px;
+  height: 45px;
   width: auto;
   object-fit: contain;
   cursor: pointer;
@@ -147,6 +166,10 @@
 }
 
 @media (max-width: 991px) {
+  .header-wrapper {
+    padding: 20px 14px;
+  }
+
   .header-card {
     height: 56px;
     padding: 0 14px;
@@ -199,6 +222,9 @@
 }
 
 @media (max-width: 768px) {
+  .header-wrapper {
+    padding: 20px 14px;
+  }
   .header-card {
     height: 56px; /* compact mobile height */
     padding: 0 14px;

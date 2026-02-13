@@ -23,6 +23,19 @@
     margin: 12px;
   }
 
+  .mobile-bottom-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background: #ffffff;
+
+    padding: 58px 0 calc(env(safe-area-inset-bottom, 0px) + 12px);
+
+    z-index: 999;
+  }
+
   .bottom-nav button {
     background: none;
     border: none;
@@ -119,6 +132,19 @@
 
     border-radius: 10px;
     margin: 12px;
+  }
+
+  .mobile-bottom-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background: #ffffff;
+
+    padding: 80px 0 calc(env(safe-area-inset-bottom, 0px) + 12px);
+
+    z-index: 999;
   }
 
   .bottom-nav button {

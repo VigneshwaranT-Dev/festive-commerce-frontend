@@ -10,9 +10,9 @@ import { Component } from '@angular/core';
 export class MobileBottomNav {
   cartCount = 8;
 
-  activeTab: 'shop' | 'cart' | 'account' = 'shop';
+  activeTab: 'shop' | 'cart' | 'account' | 'home' = 'home';
 
-  setActive(tab: 'shop' | 'cart' | 'account') {
+  setActive(tab: 'shop' | 'cart' | 'account' | 'home') {
     this.activeTab = tab;
   }
 

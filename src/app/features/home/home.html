@@ -1,29 +1,12 @@
-<!-- 🔹 HERO / BANNER CAROUSEL -->
+<!-- <app-hero-banner></app-hero-banner> -->
+
+
+<app-category-cards></app-category-cards>
 <section class="mb-4">
-  <div class="mx-5">
+  <div class=" mx-3">
     <app-banner-carousel [banners]="banners"></app-banner-carousel>
   </div>
 </section>
-
-
-<section class="m-5">
-  <div class="section-title-wrapper ">
-    <span class="decor-left"></span>
-    <h2 class="section-title px-0">Shop by Categories</h2>
-    <span class="decor-right"></span>
-  </div>
-
-  <div class="category-scroll-wrapper">
-    <div class="category-scroll">
-      <div
-        class="category-item"
-        *ngFor="let category of categories"
-      >
-        <app-category-card
-          [category]="category"
-        ></app-category-card>
-      </div>
-    </div>
-  </div>
-</section>
-
+<app-product-cards [products]="products" titleName="You might Like (Fast Selling)"></app-product-cards>
+<app-product-cards [products]="products" titleName="Children Special"></app-product-cards>
+<app-product-cards [products]="products" titleName="Sky Lights"></app-product-cards>

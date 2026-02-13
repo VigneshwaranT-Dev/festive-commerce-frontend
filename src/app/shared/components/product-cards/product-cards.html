@@ -1,0 +1,71 @@
+<section class="product-section mt-5" *ngIf="!loading">
+  <div class="product-header mx-4">
+    <h1 class="fw-bold">{{ titleName }}</h1>
+    <p class="scroll-hint m-0">
+      Scroll <i class="bi bi-arrow-right"></i>
+    </p>
+  </div>
+
+  <div class="product-grid">
+
+    <div class="product-card" *ngFor="let p of products" [class.out]="!p.inStock">
+
+      <!-- DISCOUNT -->
+      <span class="discount" *ngIf="p.mrp > p.price">
+        {{ ((p.mrp - p.price) / p.mrp * 100) | number:'1.0-0' }}% OFF
+      </span>
+
+      <button class="quick-view-btn" title="Quick view" (click)="openProductPreview(p)">
+        <i class="bi bi-search-heart"></i>
+      </button>
+
+      <!-- IMAGE -->
+      <div class="product-img-wrap">
+        <img [src]="p.image" [alt]="p.name" />
+      </div>
+
+      <!-- INFO -->
+      <div class="product-info">
+        <h4>{{ p.name }}</h4>
+        <!-- <p class="product-sub">{{ p.sub }}</p> -->
+        <p class="product-weight">{{ p.weight }}</p>
+      </div>
+
+      <!-- PRICE -->
+      <div class="product-price">
+        ₹{{ p.price }}
+        <span class="mrp" *ngIf="p.mrp > p.price">₹{{ p.mrp }}</span>
+      </div>
+
+      <!-- ACTION -->
+      <ng-container *ngIf="p.inStock; else outTpl">
+        <button *ngIf="p.qty === 0" class="add-btn" (click)="p.qty = 1">
+          <i class="bi bi-plus"></i>
+        </button>
+
+        <div class="qty-pill" *ngIf="p.qty > 0">
+          <button class="qty-btn minus" (click)="p.qty = p.qty - 1">
+            <i class="bi bi-dash"></i>
+          </button>
+
+          <span class="qty-count">{{ p.qty }}</span>
+
+          <button class="qty-btn plus" (click)="p.qty = p.qty + 1">
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+
+      </ng-container>
+
+      <ng-template #outTpl>
+        <div class="out-stock">Out of stock</div>
+      </ng-template>
+
+    </div>
+
+  </div>
+</section>
+
+<div class="product-grid" *ngIf="loading">
+  <div class="product-card skeleton" *ngFor="let i of [1,2,3,4,5]"></div>
+</div>
